@@ -1,0 +1,16 @@
+name: "Deploy"
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  deploy:
+    name: "🚚 Deploy"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Install sshpass"
+        run: "apt install sshpass"
+      - name: "Upload to server"
+        run: "sshpass -p '${{ secrets.SERVER_ROOT_PASSWORD }}' scp * root@${{ secrets.SERVER_IP }}:/usr/share/nginx/html/SchoolTimetable/"
