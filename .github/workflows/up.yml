@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: "Checkout code"
         uses: "actions/checkout@v2"
-      - name: "Install SSH keys"
-        run: "mkdir -p ~/.ssh && echo '${{ secrets.SERVER_PRIVATE_KEY }}' > ~/.ssh/id_rsa"
+      - name: "Setup SSH keys"
+        run: "mkdir -p ~/.ssh && echo '${{ secrets.SERVER_PRIVATE_KEY }}' > ~/.ssh/id_rsa && chmod 0600 ~/.ssh/id_rsa"
       - name: "Upload to server"
         run: "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null * root@${{ secrets.SERVER_IP }}:/usr/share/nginx/html/SchoolTimetable/"
       - name: "Purge cloudflare cache"
