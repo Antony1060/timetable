@@ -1,0 +1,16 @@
+{
+  "name": "school-timetable",
+  "version": "1.0.0",
+  "repository": "https://github.com/Antony1060/Timetable",
+  "author": "Antony1060 <antoniostignjedec@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel src/index.html --port 3000",
+    "prebuild": "rm -rf dist/",
+    "build": "parcel build src/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.1",
+    "typescript": "^4.5.2"
+  }
+}
