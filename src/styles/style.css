@@ -45,6 +45,10 @@ th, td {
     width: 80px;
 }
 
+th.highlighted, td.highlighted {
+    background-color: #d4ecd8;
+}
+
 .timelabel {
     display: block;
     font-weight: lighter;
