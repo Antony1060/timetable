@@ -24,8 +24,8 @@ weekCount.innerText += ` ${Math.ceil((daysSince - 1) / 7)}/41${displayLeft ? ` (
 if(daysSince % 7 >= 2) {
     let idx = daysSince % 7 - 1; // Pon -> 1; Uto -> 2; etc.
 
-    const target = isFirstWeek ? first : second;
-    target.querySelectorAll("tr").forEach(row => row.children[idx].classList.add("highlighted"))
+    // first will always be the current week
+    first.querySelectorAll("tr").forEach(row => row.children[idx].classList.add("highlighted"))
 }
 
 document.body.style["opacity"] = "1";
