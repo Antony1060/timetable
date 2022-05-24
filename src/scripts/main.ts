@@ -19,7 +19,7 @@ if([0, 1].includes(daysSince % 7)) first.getElementsByTagName("h2")[0].innerText
 else first.getElementsByTagName("h2")[0].innerText += " (trenutno)"
 
 const displayLeft = false;
-weekCount.innerText += ` ${Math.ceil((daysSince - 1) / 7)}/41${displayLeft ? ` (${Math.floor((new Date(2022, 5, 21).getTime() - Date.now()) / (1000 * 60 * 60 * 24))} dan(a) do kraja)` : ''}`;
+weekCount.innerText += ` ${Math.ceil((daysSince - 1) / 7)}/42${displayLeft ? ` (${Math.floor((new Date(2022, 5, 21).getTime() - Date.now()) / (1000 * 60 * 60 * 24))} dan(a) do kraja)` : ''}`;
 
 if(daysSince % 7 >= 2) {
     let idx = daysSince % 7 - 1; // Pon -> 1; Uto -> 2; etc.
