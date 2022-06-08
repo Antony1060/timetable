@@ -26,10 +26,15 @@ const totalWeeks = Math.ceil((END_TIME - START_TIME) / (1000 * 60 * 60 * 24 * 7)
 
 const displayLeft = true;
 
+const totalDays = Math.ceil((END_TIME - START_TIME) / (1000 * 60 * 60 * 24));
+const daysUntilLastWeek = (daysUntilEnd - (totalDays % 7));
+const daysUntilEndOfThisWeek = (6 - (daysSince % 7));
+const schoolDaysUntilEnd = Math.max(0, (totalDays % 7) - 1) + Math.min(5, daysUntilEndOfThisWeek) + (daysUntilLastWeek - daysUntilEndOfThisWeek) - (((daysUntilLastWeek - daysUntilEndOfThisWeek) / 7) >> 0) * 2;
+
 if (daysUntilEnd === 0)
      weekCount.innerHTML += `Gotovo!`
 else
-    weekCount.innerText = `Tjedan ${weeksSince}/${totalWeeks}${displayLeft ? ` (${daysUntilEnd} dan${daysUntilEnd % 10 === 1 ? "" : "a"} do kraja)` : ''}`;
+    weekCount.innerText = `Tjedan ${weeksSince}/${totalWeeks}${displayLeft ? ` (${schoolDaysUntilEnd} školsih dan${daysUntilEnd % 10 === 1 ? "" : "a"} do kraja)` : ''}`;
 
 if(daysSince % 7 >= 2) {
     let idx = daysSince % 7 - 1; // Pon -> 1; Uto -> 2; etc.
