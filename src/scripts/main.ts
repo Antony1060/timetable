@@ -34,7 +34,7 @@ const schoolDaysUntilEnd = Math.max(0, (totalDays % 7) - 1) + Math.min(5, daysUn
 if (daysUntilEnd === 0)
      weekCount.innerHTML += `Gotovo!`
 else
-    weekCount.innerText = `Tjedan ${weeksSince}/${totalWeeks}${displayLeft ? ` (${schoolDaysUntilEnd} školsk${schoolDaysUntilEnd == 1 ? "i" : schoolDaysUntilEnd <= 4 "a" : "ih"} dan${daysUntilEnd % 10 === 1 ? "" : "a"} do kraja)` : ''}`;
+    weekCount.innerText = `Tjedan ${weeksSince}/${totalWeeks}${displayLeft ? ` (${schoolDaysUntilEnd} školsk${schoolDaysUntilEnd == 1 ? "i" : schoolDaysUntilEnd <= 4 ? "a" : "ih"} dan${daysUntilEnd % 10 === 1 ? "" : "a"} do kraja)` : ''}`;
 
 if(daysSince % 7 >= 2) {
     let idx = daysSince % 7 - 1; // Pon -> 1; Uto -> 2; etc.
