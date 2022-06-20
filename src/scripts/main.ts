@@ -26,17 +26,17 @@ const totalWeeks = Math.ceil((END_TIME - START_TIME) / (1000 * 60 * 60 * 24 * 7)
 
 const displayLeft = true;
 
-const sunDayCountNow = Math.floor((Math.floor(Date.now()/(1000 * 60 * 60 * 24)) + 1) / 7);
-const sunDayCountEnd = Math.floor((Math.floor(END_TIME/(1000 * 60 * 60 * 24)) + 1) / 7);
+const sunDayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 1) / 7);
+const sunDayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 1) / 7);
 
-const saturDayCountNow = Math.floor((Math.floor(Date.now()/(1000 * 60 * 60 * 24)) + 2) / 7);
-const saturDayCountEnd = Math.floor((Math.floor(END_TIME/(1000 * 60 * 60 * 24)) + 2) / 7);
+const saturDayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 2) / 7);
+const saturDayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 2) / 7);
 
 const sunDays = sunDayCountEnd - sunDayCountNow;
 const saturDays = saturDayCountEnd - saturDayCountNow;
 const schoolDaysUntilEnd = daysUntilEnd - sunDays - saturDays;
 
-if (daysUntilEnd === 0)
+if (daysUntilEnd <= 0)
      weekCount.innerHTML += `Gotovo!`
 else
     weekCount.innerText = `Tjedan ${weeksSince}/${totalWeeks}${displayLeft ? ` (${schoolDaysUntilEnd} školsk${schoolDaysUntilEnd == 1 ? "i" : schoolDaysUntilEnd <= 4 ? "a" : "ih"} dan${schoolDaysUntilEnd % 10 === 1 ? "" : "a"} do kraja)` : ''}`;
