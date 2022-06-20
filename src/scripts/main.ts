@@ -19,17 +19,22 @@ isFirstWeek || swapElements(first, second);
 if([0, 1].includes(daysSince % 7)) first.getElementsByTagName("h2")[0].innerText += " (iduci tjedan)"
 else first.getElementsByTagName("h2")[0].innerText += " (trenutno)"
 
-const daysUntilEnd = Math.floor((END_TIME - Date.now()) / (1000 * 60 * 60 * 24));
+const daysUntilEnd = Math.ceil((END_TIME - Date.now()) / (1000 * 60 * 60 * 24));
 
 const weeksSince = Math.ceil((daysSince - 1) / 7)
 const totalWeeks = Math.ceil((END_TIME - START_TIME) / (1000 * 60 * 60 * 24 * 7));
 
 const displayLeft = true;
 
-const totalDays = Math.ceil((END_TIME - START_TIME) / (1000 * 60 * 60 * 24));
-const daysUntilLastWeek = (daysUntilEnd - (totalDays % 7));
-const daysUntilEndOfThisWeek = (6 - (daysSince % 7));
-const schoolDaysUntilEnd = Math.max(0, (totalDays % 7) - 1) + Math.min(5, daysUntilEndOfThisWeek) + (daysUntilLastWeek - daysUntilEndOfThisWeek) - (((daysUntilLastWeek - daysUntilEndOfThisWeek) / 7) >> 0) * 2;
+const sunDayCountNow = Math.floor((Math.floor(Date.now()/(1000 * 60 * 60 * 24)) + 1) / 7);
+const sunDayCountEnd = Math.floor((Math.floor(END_TIME/(1000 * 60 * 60 * 24)) + 1) / 7);
+
+const saturDayCountNow = Math.floor((Math.floor(Date.now()/(1000 * 60 * 60 * 24)) + 2) / 7);
+const saturDayCountEnd = Math.floor((Math.floor(END_TIME/(1000 * 60 * 60 * 24)) + 2) / 7);
+
+const sunDays = sunDayCountEnd - sunDayCountNow;
+const saturDays = saturDayCountEnd - saturDayCountNow;
+const schoolDaysUntilEnd = daysUntilEnd - sunDays - saturDays;
 
 if (daysUntilEnd === 0)
      weekCount.innerHTML += `Gotovo!`
