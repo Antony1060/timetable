@@ -5,8 +5,8 @@ const weekCount: HTMLHeadingElement = document.querySelector(".week");
 
 // first monday
 // -2 to account for weekends, because we start displaying correct timetable at weekend before that week
-const START_TIME = new Date(2021, 8, 6 - 2).getTime();
-const END_TIME = new Date(2022, 5, 21).getTime();
+const START_TIME = new Date(2022, 8, 5 - 2).getTime();
+const END_TIME = new Date(2023, 4, 26).getTime();
 // will change this as years go on
 const START_WEEK = second;
 START_WEEK != first && swapElements(first, second);
@@ -24,7 +24,7 @@ const daysUntilEnd = Math.ceil((END_TIME - Date.now()) / (1000 * 60 * 60 * 24));
 const weeksSince = Math.ceil((daysSince - 1) / 7)
 const totalWeeks = Math.ceil((END_TIME - START_TIME) / (1000 * 60 * 60 * 24 * 7));
 
-const displayLeft = true;
+const displayLeft = false;
 
 const sunDayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 1) / 7);
 const sunDayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 1) / 7);
