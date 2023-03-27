@@ -1,200 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
     <title>School Timetable | 4.A</title>
     <style>
-        @import "./styles/style.css";
+      @import "./styles/style.css";
     </style>
-</head>
-<body style="opacity: 0; transition: 0.2s linear;">
+  </head>
+  <body style="opacity: 0; transition: 0.2s linear">
     <h2 class="week"></h2>
     <div class="divider"></div>
     <div class="timetable">
-        <h2>Smjena Ujutro</h2>
-        <table>
-            <tr>
-                <th>Dan</th>
-                <th>Pon</th>
-                <th>Uto</th>
-                <th>Sri</th>
-                <th>Čet</th>
-                <th>Pet</th>
-            </tr>
-            <tr>
-                <th>
-                    1.
-                    <span class="timelabel">8:00 - 8:45</span>
-                </th>
-                <td>Geo</td>
-                <td>Pig</td>
-                <td>Geo</td>
-                <td>Hrv</td>
-                <td>Mat</td>
-            </tr>
-            <tr>
-                <th>
-                    2.
-                    <span class="timelabel">8:50 - 9:35</span>
-                </th>
-                <td>Hrv</td>
-                <td>Etika/Vjer</td>
-                <td>Eng</td>
-                <td>Hrv</td>
-                <td>Mat</td>
-            </tr>
-            <tr>
-                <th>
-                    3.
-                    <span class="timelabel">9:40 - 10:25</span>
-                </th>
-                <td>Tzk</td>
-                <td>Izb</td>
-                <td>Eng</td>
-                <td>Fil</td>
-                <td>Tzk</td>
-            </tr>
-            <tr>
-                <th>
-                    4.
-                    <span class="timelabel">10:40 - 11:25</span>
-                </th>
-                <td>Srz</td>
-                <td>Izb</td>
-                <td>Fiz</td>
-                <td>Inf</td>
-                <td>Fil</td>
-            </tr>
-            <tr>
-                <th>
-                    5.
-                    <span class="timelabel">11:30 - 12:15</span>
-                </th>
-                <td>Bio</td>
-                <td>Fiz</td>
-                <td>Fiz</td>
-                <td>Inf</td>
-                <td>Kem</td>
-            </tr>
-            <tr>
-                <th>
-                    6.
-                    <span class="timelabel">12:20 - 13:05</span>
-                </th>
-                <td>Bio</td>
-                <td>Pov</td>
-                <td>Mat</td>
-                <td>Mat</td>
-                <td>Kem</td>
-            </tr>
-            <tr>
-                <th>
-                    7.
-                    <span class="timelabel">13:10 - 13:50</span>
-                </th>
-                <td></td>
-                <td>Pov</td>
-                <td>Hrv</td>
-                <td>Mat</td>
-                <td>Eng</td>
-            </tr>
-        </table>
+      <h2>Smjena Ujutro</h2>
+      <table>
+        <tr>
+          <th>Dan</th>
+          <th>Pon</th>
+          <th>Uto</th>
+          <th>Sri</th>
+          <th>Čet</th>
+          <th>Pet</th>
+        </tr>
+        <tr>
+          <th>
+            1.
+            <span class="timelabel">8:00 - 8:45</span>
+          </th>
+          <td>Geo</td>
+          <td>Pig</td>
+          <td>Geo</td>
+          <td>Hrv</td>
+          <td>Mat</td>
+        </tr>
+        <tr>
+          <th>
+            2.
+            <span class="timelabel">8:50 - 9:35</span>
+          </th>
+          <td>Hrv</td>
+          <td>Etika/Vjer</td>
+          <td>Eng</td>
+          <td>Hrv</td>
+          <td>Mat</td>
+        </tr>
+        <tr>
+          <th>
+            3.
+            <span class="timelabel">9:40 - 10:25</span>
+          </th>
+          <td>Tzk</td>
+          <td>Izb</td>
+          <td>Eng</td>
+          <td>Fil</td>
+          <td>Tzk</td>
+        </tr>
+        <tr>
+          <th>
+            4.
+            <span class="timelabel">10:40 - 11:25</span>
+          </th>
+          <td>Hrv</td>
+          <td>Izb</td>
+          <td>Fiz</td>
+          <td>Inf</td>
+          <td>Fil</td>
+        </tr>
+        <tr>
+          <th>
+            5.
+            <span class="timelabel">11:30 - 12:15</span>
+          </th>
+          <td>Bio</td>
+          <td>Fiz</td>
+          <td>Fiz</td>
+          <td>Inf</td>
+          <td>Kem</td>
+        </tr>
+        <tr>
+          <th>
+            6.
+            <span class="timelabel">12:20 - 13:05</span>
+          </th>
+          <td>Bio</td>
+          <td>Pov</td>
+          <td>Mat</td>
+          <td>Mat</td>
+          <td>Kem</td>
+        </tr>
+        <tr>
+          <th>
+            7.
+            <span class="timelabel">13:10 - 13:50</span>
+          </th>
+          <td style="opacity: 0.6">Srz</td>
+          <td>Pov</td>
+          <td>Hrv</td>
+          <td>Mat</td>
+          <td>Eng</td>
+        </tr>
+      </table>
     </div>
 
     <div class="timetable">
-        <h2>Smjena Popodne</h2>
-        <table>
-            <tr>
-                <th>Dan</th>
-                <th>Pon</th>
-                <th>Uto</th>
-                <th>Sri</th>
-                <th>Čet</th>
-                <th>Pet</th>
-            </tr>
-            <tr>
-                <th>
-                    1.
-                    <span class="timelabel">14:00 - 14:45</span>
-                </th>
-                <td>Tzk</td>
-                <td>Izb</td>
-                <td>Tzk</td>
-                <td>Kem</td>
-                <td>Hrv</td>
-            </tr>
-            <tr>
-                <th>
-                    2.
-                    <span class="timelabel">14:50 - 15:35</span>
-                </th>
-                <td>Hrv</td>
-                <td>Izb</td>
-                <td>Fiz</td>
-                <td>Kem</td>
-                <td>Hrv</td>
-            </tr>
-            <tr>
-                <th>
-                    3.
-                    <span class="timelabel">15:40 - 16:25</span>
-                </th>
-                <td>Eng</td>
-                <td>Pig</td>
-                <td>Fiz</td>
-                <td>Mat</td>
-                <td>Mat</td>
-            </tr>
-            <tr>
-                <th>
-                    4.
-                    <span class="timelabel">16:40 - 17:25</span>
-                </th>
-                <td>Mat</td>
-                <td>Fil</td>
-                <td>Geo</td>
-                <td>Mat</td>
-                <td>Eng</td>
-            </tr>
-            <tr>
-                <th>
-                    5.
-                    <span class="timelabel">17:30 - 18:15</span>
-                </th>
-                <td>Mat</td>
-                <td>Etika/Vjer</td>
-                <td>Geo</td>
-                <td>Fil</td>
-                <td>Eng</td>
-            </tr>
-            <tr>
-                <th>
-                    6.
-                    <span class="timelabel">18:20 - 19:05</span>
-                </th>
-                <td>Bio</td>
-                <td>Pov</td>
-                <td>Hrv</td>
-                <td>Inf</td>
-                <td>Fiz</td>
-            </tr>
-            <tr>
-                <th>
-                    7.
-                    <span class="timelabel">19:10 - 19:50</span>
-                </th>
-                <td>Bio</td>
-                <td>Pov</td>
-                <td style="opacity: 0.6;">Srz</td>
-                <td>Inf</td>
-                <td></td>
-            </tr>
-        </table>
+      <h2>Smjena Popodne</h2>
+      <table>
+        <tr>
+          <th>Dan</th>
+          <th>Pon</th>
+          <th>Uto</th>
+          <th>Sri</th>
+          <th>Čet</th>
+          <th>Pet</th>
+        </tr>
+        <tr>
+          <th>
+            1.
+            <span class="timelabel">14:00 - 14:45</span>
+          </th>
+          <td>Tzk</td>
+          <td>Izb</td>
+          <td>Tzk</td>
+          <td>Kem</td>
+          <td>Hrv</td>
+        </tr>
+        <tr>
+          <th>
+            2.
+            <span class="timelabel">14:50 - 15:35</span>
+          </th>
+          <td>Hrv</td>
+          <td>Izb</td>
+          <td>Fiz</td>
+          <td>Kem</td>
+          <td>Hrv</td>
+        </tr>
+        <tr>
+          <th>
+            3.
+            <span class="timelabel">15:40 - 16:25</span>
+          </th>
+          <td>Eng</td>
+          <td>Pig</td>
+          <td>Fiz</td>
+          <td>Mat</td>
+          <td>Mat</td>
+        </tr>
+        <tr>
+          <th>
+            4.
+            <span class="timelabel">16:40 - 17:25</span>
+          </th>
+          <td>Mat</td>
+          <td>Fil</td>
+          <td>Geo</td>
+          <td>Mat</td>
+          <td>Eng</td>
+        </tr>
+        <tr>
+          <th>
+            5.
+            <span class="timelabel">17:30 - 18:15</span>
+          </th>
+          <td>Mat</td>
+          <td>Etika/Vjer</td>
+          <td>Geo</td>
+          <td>Fil</td>
+          <td>Eng</td>
+        </tr>
+        <tr>
+          <th>
+            6.
+            <span class="timelabel">18:20 - 19:05</span>
+          </th>
+          <td>Bio</td>
+          <td>Pov</td>
+          <td>Hrv</td>
+          <td>Inf</td>
+          <td>Fiz</td>
+        </tr>
+        <tr>
+          <th>
+            7.
+            <span class="timelabel">19:10 - 19:50</span>
+          </th>
+          <td>Bio</td>
+          <td>Pov</td>
+          <td style="opacity: 0.6">Srz</td>
+          <td>Inf</td>
+          <td></td>
+        </tr>
+      </table>
     </div>
-    <input id="spin-code" type="hidden" value="document.querySelectorAll('*').forEach(it => it.style['animation'] = 'spin 2s linear 0s infinite')">
     <script type="module">
-        import main from "./scripts/main.ts";
+      import main from "./scripts/main.ts";
     </script>
-</body>
+  </body>
 </html>

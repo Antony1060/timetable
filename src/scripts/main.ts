@@ -1,7 +1,7 @@
 import { swapElements } from "./util";
 
 const [ first, second ] = document.querySelectorAll(".timetable");
-const weekCount: HTMLHeadingElement = document.querySelector(".week");
+const weekCount = document.querySelector(".week") as HTMLHeadingElement;
 
 // first monday
 // -2 to account for weekends, because we start displaying correct timetable at weekend before that week
