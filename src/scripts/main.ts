@@ -24,7 +24,7 @@ const daysUntilEnd = Math.ceil((END_TIME - Date.now()) / (1000 * 60 * 60 * 24));
 const weeksSince = Math.ceil((daysSince - 1) / 7)
 const totalWeeks = Math.ceil((END_TIME - START_TIME) / (1000 * 60 * 60 * 24 * 7));
 
-const displayLeft = false;
+const displayLeft = true;
 
 const sunDayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 1) / 7);
 const sunDayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 1) / 7);
