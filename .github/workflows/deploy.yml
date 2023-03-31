@@ -11,13 +11,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v2
         with:
-          node-version: '16.9.1'
-          registry-url: 'https://registry.npmjs.org'
-      - run: yarn
+          node-version: 18
+
+      - name: Install PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.25.0
+
+      - name: Set PNPM store path
+        run: "echo \"PNPM_STORE_PATH=$(pnpm store path)\" >> $GITHUB_ENV"
+
+      - name: Cache PNPM packages
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.PNPM_STORE_PATH }}
+          key: pnpm-${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            pnpm-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: pnpm install
+
       - name: Build
-        run: yarn build
+        run: pnpm build
+
       - name: Edgeserver Upload
         uses: lvkdotsh/edgeserver-upload@master
         with:
