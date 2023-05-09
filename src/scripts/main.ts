@@ -19,27 +19,30 @@ isFirstWeek || swapElements(first, second);
 if([0, 1].includes(daysSince % 7)) first.getElementsByTagName("h2")[0].innerText += " (iduci tjedan)"
 else first.getElementsByTagName("h2")[0].innerText += " (trenutno)"
 
-const daysUntilEnd = Math.ceil((END_TIME - Date.now()) / (1000 * 60 * 60 * 24));
+// +1 because END_TIME will be 00:00 at that day
+const daysUntilEnd = Math.ceil((END_TIME - Date.now()) / (1000 * 60 * 60 * 24) + 1);
 
 const weeksSince = Math.ceil((daysSince - 1) / 7)
 const totalWeeks = Math.ceil((END_TIME - START_TIME) / (1000 * 60 * 60 * 24 * 7));
 
-const displayLeft = true;
+const displayDaysLeft = true;
 
-const sunDayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 1) / 7);
-const sunDayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 1) / 7);
+const saturdayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 1) / 7);
+const saturdayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 1) / 7);
 
-const saturDayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 2) / 7);
-const saturDayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 2) / 7);
+const sundayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 2) / 7);
+const sundayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 2) / 7);
 
-const sunDays = sunDayCountEnd - sunDayCountNow;
-const saturDays = saturDayCountEnd - saturDayCountNow;
-const schoolDaysUntilEnd = daysUntilEnd - sunDays - saturDays;
+const saturdays = saturdayCountEnd - saturdayCountNow;
+const sundays = sundayCountEnd - sundayCountNow;
+
+// +1 to include current day
+const schoolDaysUntilEnd = daysUntilEnd - sundays - saturdays + 1;
 
 if (daysUntilEnd <= 0)
      weekCount.innerHTML += `Gotovo!`
 else
-    weekCount.innerText = `Tjedan ${weeksSince}/${totalWeeks}${displayLeft ? ` (${schoolDaysUntilEnd} školsk${schoolDaysUntilEnd == 1 ? "i" : schoolDaysUntilEnd <= 4 ? "a" : "ih"} dan${schoolDaysUntilEnd % 10 === 1 ? "" : "a"} do kraja)` : ''}`;
+    weekCount.innerText = `Tjedan ${weeksSince}/${totalWeeks}${displayDaysLeft ? ` (${schoolDaysUntilEnd} školsk${schoolDaysUntilEnd == 1 ? "i" : schoolDaysUntilEnd <= 4 ? "a" : "ih"} dan${schoolDaysUntilEnd % 10 === 1 ? "" : "a"} do kraja)` : ''}`;
 
 if(daysSince % 7 >= 2) {
     let idx = daysSince % 7 - 1; // Pon -> 1; Uto -> 2; etc.
