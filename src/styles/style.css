@@ -29,6 +29,7 @@ hr {
 .timetable {
     width: max-content;
     padding: 0 1rem;
+    margin-top: 0.4rem;
 }
 
 .week {
@@ -40,7 +41,7 @@ hr {
 .timetable h2 {
     width: max-content;
     margin: auto;
-    padding-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
 }
 
 table, th, td {
