@@ -27,17 +27,16 @@ const totalWeeks = Math.ceil((END_TIME - START_TIME) / (1000 * 60 * 60 * 24 * 7)
 
 const displayDaysLeft = true;
 
-const saturdayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 1) / 7);
-const saturdayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 1) / 7);
+const saturdayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 2) / 7);
+const saturdayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 2) / 7);
 
-const sundayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 2) / 7);
-const sundayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 2) / 7);
+const sundayCountNow = Math.floor((Math.floor(Date.now() / (1000 * 60 * 60 * 24)) + 1) / 7);
+const sundayCountEnd = Math.floor((Math.floor(END_TIME / (1000 * 60 * 60 * 24)) + 1) / 7);
 
 const saturdays = saturdayCountEnd - saturdayCountNow;
 const sundays = sundayCountEnd - sundayCountNow;
 
-// +1 to include current day
-const schoolDaysUntilEnd = daysUntilEnd - sundays - saturdays + 1;
+const schoolDaysUntilEnd = daysUntilEnd - sundays - saturdays;
 
 if (daysUntilEnd <= 0)
      weekCount.innerHTML += `Gotovo!`
